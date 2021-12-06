@@ -12,6 +12,11 @@ class AsynchronousMailPersistenceService {
         message.delete()
     }
 
+    void deleteAttachments(AsynchronousMailMessage message, boolean flush) {
+        message.attachments.clear()
+        message.save(flush: flush)
+    }
+
     AsynchronousMailMessage getMessage(long id){
         return AsynchronousMailMessage.get(id)
     }

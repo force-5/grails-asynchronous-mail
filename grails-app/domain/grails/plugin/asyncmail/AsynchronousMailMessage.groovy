@@ -78,6 +78,8 @@ class AsynchronousMailMessage implements Serializable {
     /** Mark this message for deletion after it's sent */
     boolean markDelete = false
 
+    boolean markDeleteAttachments = false
+
     /** Check if message can be aborted */
     boolean isAbortable() {
         return status in [CREATED, ATTEMPTED]
@@ -159,6 +161,8 @@ class AsynchronousMailMessage implements Serializable {
         )
 
         text type: 'text'
+
+        attachments cascade: "all-delete-orphan"
     }
 
     static constraints = {

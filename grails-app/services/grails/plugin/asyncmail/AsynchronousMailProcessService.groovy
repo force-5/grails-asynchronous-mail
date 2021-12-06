@@ -94,6 +94,11 @@ class AsynchronousMailProcessService {
                 long id = message.id
                 asynchronousMailPersistenceService.delete(message);
                 log.trace("The message with id=${id} was deleted.")
+            } else if (message.hasSentStatus() && message.markDeleteAttachments) {
+            asynchronousMailPersistenceService.deleteAttachments(message, useFlushOnSave)
+            log.trace("The message with id=${messageId} had all its attachments deleted.")
+            } else {
+                log.trace("The message with id=${messageId} will not be deleted.")
             }
         }
     }

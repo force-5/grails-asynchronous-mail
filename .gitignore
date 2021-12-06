@@ -30,3 +30,5 @@ grails-app/i18n/
 grails-app/conf/UrlMappings.groovy
 .classpath
 .project
+
+/.slcache/
