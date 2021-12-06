@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory
 
 class AsynchronousMailGrailsPlugin {
     def version = "1"
-    def groupId = "com.force5Solutions.vms"
+    def groupId = "com.force5solutions.vms"
     def grailsVersion = "2.5.5"
     def loadAfter = ['mail', 'quartz', 'hibernate', 'hibernate4', 'mongodb']
     def pluginExcludes = [
