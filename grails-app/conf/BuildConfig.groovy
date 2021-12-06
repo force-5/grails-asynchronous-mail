@@ -26,6 +26,11 @@ grails.project.dependency.resolution = {
     dependencies {
         compile "org.codehaus.gpars:gpars:1.2.1"
         compile 'org.codehaus.groovy:groovy-all:2.4.5'
+
+        build ('org.kuali.maven.wagons:maven-s3-wagon:1.1.22') {
+            export = false
+            exclude 'slf4j-log4j12'
+        }
     }
 
     plugins {
