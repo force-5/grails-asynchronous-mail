@@ -11,8 +11,9 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 class AsynchronousMailGrailsPlugin {
-    def version = "1.2"
-    def grailsVersion = "2.3.1 > *"
+    def version = "1"
+    def groupId = "com.force5Solutions.vms"
+    def grailsVersion = "2.5.5"
     def loadAfter = ['mail', 'quartz', 'hibernate', 'hibernate4', 'mongodb']
     def pluginExcludes = [
             "grails-app/conf/DataSource.groovy",
